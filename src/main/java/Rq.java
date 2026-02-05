@@ -26,12 +26,15 @@ public class Rq {
 //            return "title";
 //        }
 
-        String param = cmd.split("\\?")[1];
-        String paramKey = param.split("=")[0];
-        String paramValue = param.split("=")[1];
+        String params = cmd.split("\\?")[1];
 
-        if(paramKey.equals(key)) {
-            return paramValue;
+        for(String param : params.split("&")) {
+            String paramKey = param.split("=")[0];
+            String paramValue = param.split("=")[1];
+
+            if(paramKey.equals(key)) {
+                return paramValue;
+            }
         }
 
         return "";
