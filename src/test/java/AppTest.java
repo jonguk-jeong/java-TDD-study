@@ -33,4 +33,6 @@ public class AppTest {
     }
 }
 
-// assertThat Alt + Enter 누르고 3번째
+// assertThat Alt + Enter 누르고 import static
+// import static org.assertj.core.api.Assertions.assertThat;
+// 맥은 option + Enter
