@@ -17,7 +17,7 @@ public class Rq {
         return cmd.split("\\?")[0];
     }
 
-    public String getParam(String key) {
+    public String getParam(String key, String defaultValue) {
 //        if(cmd.equals("목록?keyword=자바")) {
 //            return "자바";
 //        }
@@ -37,11 +37,15 @@ public class Rq {
             }
         }
 
-        return "";
+        return defaultValue;
     }
 
-    public int getParamAsInt(String key) {
-        String rst = getParam(key);
-        return Integer.parseInt(rst);
+    public int getParamAsInt(String key, int defaultValue) {
+        String rst = getParam(key, "");
+        try {
+            return Integer.parseInt(rst);
+        } catch(NumberFormatException e) {
+            return defaultValue;
+        }
     }
 }
