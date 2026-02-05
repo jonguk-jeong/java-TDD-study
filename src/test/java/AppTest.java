@@ -13,6 +13,15 @@ public class AppTest {
 
         assertThat(rst).isEqualTo(3);   // rst 실행해서 3이 나오면 참
     }
+
+    @Test
+    @DisplayName("10 + 20 = 30")
+    void t2() {
+        App app = new App();
+        int rst = app.plus(10, 20);
+
+        assertThat(rst).isEqualTo(30);   // rst 실행해서 30이 나오면 참
+    }
 }
 
 // assertThat Alt + Enter 누르고 3번째
